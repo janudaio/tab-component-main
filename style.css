@@ -1,0 +1,99 @@
+/* Importing the 'Poppins' font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Universal selector to reset default margins and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Applying Poppins font to all elements */
+}
+
+/* Styling the body to center content with a background color */
+body {
+  background-color: #c5e0fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height to vertically center the content */
+}
+
+/* Container for the entire tab component */
+.container {
+  width: 600px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1); /* Adding light shadow around the container */
+  border-radius: 20px; /* Rounded corners */
+}
+
+/* Styling the tab section (tab buttons) */
+.tab_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* Even spacing between tabs */
+  align-items: center;
+  border-bottom: 2px solid rgb(229, 229, 299); /* Light gray bottom border */
+  position: relative; /* Needed for the absolute positioning of the text line */
+}
+
+/* Styling each tab button */
+.tab_box .tab_btn {
+  font-size: 18px;
+  font-weight: 600; /* Bold font weight */
+  color: #919191; /* Default tab text color */
+  background: none; /* Removing button background */
+  border: none; /* Removing button border */
+  padding: 18px; /* Padding around the button text */
+  cursor: pointer; /* Changing cursor to pointer to indicate it's clickable */
+}
+
+/* Active tab button styling */
+.tab_box .tab_btn.active {
+  color: #7360ff; /* Highlighted color for active tab */
+}
+
+/* The decorative line that moves under active tab */
+.text-line {
+  position: absolute;
+  top: 50px; /* Positioning the line slightly below the tabs */
+  left: 15px; /* Initial left position */
+  width: 90px; /* Default width */
+  height: 5px; /* Height of the line */
+  background-color: #7360ff; /* Same color as the active tab */
+  border-radius: 10px; /* Slightly rounded corners */
+  transition: all 0.2s ease-in-out; /* Smooth transition effect when the line moves */
+}
+
+/* Styling the content area under the tabs */
+.content_box {
+  padding: 20px; /* Padding inside the content area */
+}
+
+/* Hiding all content sections by default */
+.content_box .content {
+  display: none;
+}
+
+/* Display the content of the active tab */
+.content_box .content.active {
+  display: block;
+  animation: moving 0.5s ease; /* Animation effect when the content is shown */
+}
+
+/* Keyframe animation for content sliding in */
+@keyframes moving {
+  from {
+    transform: translateX(50px); /* Start with content 50px to the right */
+    opacity: 0; /* Start with 0 opacity (invisible) */
+  }
+  to {
+    transform: translateX(0px); /* Move content to its original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Heading styling within the content box */
+.content_box .content h2 {
+  margin-bottom: 10px; /* Spacing below the heading */
+}
