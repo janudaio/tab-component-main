@@ -2,6 +2,8 @@
 
 This project demonstrates a simple tab component built using HTML, CSS, and JavaScript. It allows users to switch between different tabs to view various sections of content.
 
+URL for this project: `https://roadmap.sh/projects/simple-tabs`
+
 ## Features
 
 - Tab Navigation: The tab component includes four tabs. Users can click on each tab to navigate between different content sections.
